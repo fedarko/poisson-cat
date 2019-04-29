@@ -13,12 +13,13 @@ for Cameron's version of it.
 ## Running this
 
 This code is dependent on the following python packages:
-    - click
-    - biom-format
-    - pandas
-    - numpy
-    - scipy
-    - scikit-learn
+
+ - click
+ - biom-format
+ - pandas
+ - numpy
+ - scipy
+ - scikit-learn
 
 ```
 Usage: run.py [OPTIONS]
