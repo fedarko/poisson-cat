@@ -2,9 +2,10 @@
 
 Closed-form poisson differential computation.
 
-All of the code in `poisson_cat.py` was written by Jamie Morton (@mortonjt)
-and Cameron Martino (@cameronmartino), who also worked out the accompanying
-math. See
+**All of the code in `poisson_cat.py` was written by Jamie Morton
+([@mortonjt](https://github.com/mortonjt))
+and Cameron Martino ([@cameronmartino](https://github.com/cameronmartino)),
+who also worked out the accompanying math.** See
 [here](https://gist.github.com/mortonjt/0bb8d0565fc6c02b48e91524e816f112) for
 the original gist from Jamie, and
 [here](https://gist.github.com/cameronmartino/8d89b73c2dcd749992127ad5a8d284e2)
