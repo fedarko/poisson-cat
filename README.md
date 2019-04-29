@@ -33,4 +33,4 @@ Options:
 ```
 
 The output differentials should be displayable in
-[rankratioviz](https://github.com/fedarko/rankratioviz)
+[rankratioviz](https://github.com/fedarko/rankratioviz).
