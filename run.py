@@ -97,7 +97,9 @@ def run_poisson_cat(
     print("Running poisson_cat...")
     diff = poisson_cat(loaded_table, metadata_df, category, reference_category)
     print("Done.")
-    diff.to_csv(output_path, sep="\t", header=["Differential"], index_label="FeatureID")
+    diff.to_csv(
+        output_path, sep="\t", header=["Differential"], index_label="FeatureID"
+    )
 
 
 if __name__ == "__main__":
