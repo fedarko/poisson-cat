@@ -44,7 +44,7 @@ from poisson_cat import poisson_cat
     default=False,
     help=(
         "If passed, this will filter out all samples with a category value "
-        'of "Control"'
+        'of "Control"; will also then filter out all "empty" features'
     ),
 )
 def run_poisson_cat(
