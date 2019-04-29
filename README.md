@@ -5,6 +5,14 @@ Martino, who also worked out the accompanying math.
 
 ## Running this
 
+This code is dependent on the following python packages:
+    - click
+    - biom-format
+    - pandas
+    - numpy
+    - scipy
+    - scikit-learn
+
 ```
 Usage: run.py [OPTIONS]
 
