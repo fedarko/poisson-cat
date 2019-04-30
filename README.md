@@ -26,16 +26,23 @@ Usage: run.py [OPTIONS]
 Options:
   -t, --table TEXT                BIOM table with count data  [required]
   -m, --metadata TEXT             Sample metadata file  [required]
-  -c, --category TEXT             Metadata category of interest  [required]
+  -c, --category TEXT             Metadata category of interest; currently
+                                  only binary categories (i.e. those
+                                  containing only two unique values) are
+                                  supported  [required]
   -r, --reference-category TEXT   Reference metadata category of interest; if
                                   not specified, the first category will be
                                   picked
   -o, --output-path TEXT          Output filepath to which differentials TSV
                                   will be written  [required]
-  -f, --filter-control / --no-filter-control
+  -f, --filter-category-value TEXT
                                   If passed, this will filter out all samples
-                                  with a category value of "Control"; will
-                                  also then filter out all "empty" features
+                                  with a -c category value of this string.
+                                  This will also afterwards filter out all
+                                  "empty" features. This is useful if you have
+                                  a category with three possible values that
+                                  you'd like to make into a binary category,
+                                  so that it can be used here.
   --help                          Show this message and exit.
 ```
 

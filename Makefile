@@ -8,11 +8,11 @@ style:
 
 # Shows an example of how to use this in conjunction with rankratioviz
 run:
-	./run.py --table /projects/emp/redbiom/emp_deblur_150bp.release1.biom \
-			 --metadata /projects/emp/redbiom/emp_deblur_150bp.release1.map.tsv \
-			 --category empo_1 \
+	./run.py --table ../EMP/emp_deblur_150bp.release1.biom \
+			 --metadata ../EMP/emp_deblur_150bp.release1.map.tsv \
+			 --category "empo_1" \
 			 --output-path diffs.tsv \
-			 --filter-control
+			 --filter-category-value "Control"
 
 rrv:
 	rm -rf emp_poisson_rrv_out/

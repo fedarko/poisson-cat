@@ -21,7 +21,13 @@ from poisson_cat import poisson_cat
 )
 @click.option("-m", "--metadata", required=True, help="Sample metadata file")
 @click.option(
-    "-c", "--category", required=True, help="Metadata category of interest"
+    "-c",
+    "--category",
+    required=True,
+    help=(
+        "Metadata category of interest; currently only binary categories "
+        "(i.e. those containing only two unique values) are supported"
+    ),
 )
 @click.option(
     "-r",
@@ -40,11 +46,14 @@ from poisson_cat import poisson_cat
 )
 @click.option(
     "-f",
-    "--filter-control/--no-filter-control",
-    default=False,
+    "--filter-category-value",
+    default=None,
     help=(
-        "If passed, this will filter out all samples with a category value "
-        'of "Control"; will also then filter out all "empty" features'
+        "If passed, this will filter out all samples with a -c category value "
+        'of this string. This will also afterwards filter out all "empty" '
+        "features. This is useful if you have a "
+        "category with three possible values that you'd like to make into a "
+        "binary category, so that it can be used here."
     ),
 )
 def run_poisson_cat(
@@ -53,25 +62,27 @@ def run_poisson_cat(
     category: str,
     reference_category: str,
     output_path: str,
-    filter_control: bool,
+    filter_category_value: str,
 ) -> None:
 
     # table_df = load_table(table).to_dataframe()
     loaded_table = load_table(table)
     metadata_df = pd.read_csv(metadata, index_col=0, sep="\t")
     unique_cats = metadata_df[category].unique()
-    if filter_control and unique_cats.shape[0] > 2:
-        if "Control" in unique_cats:
+    if filter_category_value is not None and unique_cats.shape[0] > 2:
+        if filter_category_value in unique_cats:
             # Based on https://stackoverflow.com/a/18173074/1073
             print(
                 "Number of samples pre-filtering: {}".format(
                     metadata_df.shape[0]
                 )
             )
-            # control_row_idxs = metadata_df[
-            #     metadata_df[category] == "Control"
+            # filtered_row_idxs = metadata_df[
+            #     metadata_df[category] == filter_category_value
             # ].index
-            metadata_df = metadata_df[metadata_df[category] != "Control"]
+            metadata_df = metadata_df[
+                metadata_df[category] != filter_category_value
+            ]
             loaded_table.filter(metadata_df.index)
             print(
                 "Number of samples post-filtering: {}".format(
