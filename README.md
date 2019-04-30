@@ -1,4 +1,5 @@
 # poisson-cat
+[![Build Status](https://travis-ci.org/fedarko/poisson-cat.svg?branch=master)](https://travis-ci.org/fedarko/poisson-cat)
 
 Closed-form poisson differential computation.
 
