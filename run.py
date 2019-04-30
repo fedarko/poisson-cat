@@ -68,9 +68,9 @@ def run_poisson_cat(
                     metadata_df.shape[0]
                 )
             )
-            control_row_idxs = metadata_df[
-                metadata_df[category] == "Control"
-            ].index
+            # control_row_idxs = metadata_df[
+            #     metadata_df[category] == "Control"
+            # ].index
             metadata_df = metadata_df[metadata_df[category] != "Control"]
             loaded_table.filter(metadata_df.index)
             print(
