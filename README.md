@@ -12,16 +12,13 @@ the original gist from Jamie, and
 [here](https://gist.github.com/cameronmartino/8d89b73c2dcd749992127ad5a8d284e2)
 for Cameron's version of it.
 
+## Installation
+
+```bash
+pip install click biom-format pandas numpy scipy scikit-learn
+```
+
 ## Running this
-
-This code is dependent on the following python packages:
-
- - click
- - biom-format
- - pandas
- - numpy
- - scipy
- - scikit-learn
 
 ```
 Usage: run.py [OPTIONS]
