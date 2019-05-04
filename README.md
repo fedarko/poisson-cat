@@ -46,5 +46,15 @@ Options:
   --help                          Show this message and exit.
 ```
 
-The output differentials should be displayable in
-[rankratioviz](https://github.com/fedarko/rankratioviz).
+## Visualizing the output
+
+The output differentials can be displayed in
+[rankratioviz](https://github.com/fedarko/rankratioviz). If you're using
+rankratioviz through QIIME 2, you can import the output differentials here as a
+`FeatureData[Differential]` artifact, and visualize them using
+`qiime rankratioviz supervised-rank-plot`; if you're using rankratioviz
+outside of QIIME 2, you should just be able to pass the differentials directly
+to rankratioviz.
+
+(Note that you might want to use the `-x / --extreme-feature-count` option in
+rankratioviz if your BIOM table has a lot of entries.)
